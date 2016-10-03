@@ -16,7 +16,7 @@
     %meta{property: "og:url", content: "[TODO]"}
     %meta{property: "og:image", content: "[TODO]"}
 
-    -#= javascript_include_tag "/style/main.css"
+    -#= javascript_include_tag "style/main.css"
     - if data.page.styles
       - data.page.styles.each do |file|
         = stylesheet_link_tag "#{file}"
