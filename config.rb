@@ -2,6 +2,11 @@
 # Page options, layouts, aliases and proxies
 ###
 
+set :css_dir, 'style'
+set :js_dir, 'script'
+set :images_dir, 'img'
+# set :build_dir, '../html'
+
 # Per-page layout changes:
 #
 # With no layout
