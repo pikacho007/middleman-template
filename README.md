@@ -30,7 +30,12 @@ checkout `source` branch
 ***Install bundles***
 
 ```
+git submodule init
+git submodule update
+
 bundle install --path=vendor/bundle --binstubs=vendor/bin
+
+npm install
 ```
 
 ###Middleman commands
