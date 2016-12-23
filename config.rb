@@ -59,6 +59,29 @@ end
 ###
 
 helpers do
+  
+  # 高解像度画像の指定
+  def img_tag(src, options = {})
+    # alt属性などをoptionsで指定できるようにしている
+    retina_src = src.gsub(%r{\.\w+$}, '@2x\0')
+    image_tag(src, options.merge(srcset: "#{retina_src} 2x"))
+  end
+
+  # 高解像度画像の指定
+  def img_tag_sp(src, options = {})
+    sp_src = src.gsub(%r{\.\w+$}, '-sp\0')
+
+    # classキー付与。既存の値がある場合は連結。
+    pc_opt = options.merge(class: 'pc'){ |key, v0, v1| "#{v0} #{v1}" }
+    sp_opt = options.merge(class: 'sp'){ |key, v0, v1| "#{v0} #{v1}" }
+
+    # idキーが付いていた場合は'_sp'を付ける
+    if(sp_opt[:id])
+      sp_opt[:id] = sp_opt[:id]+'_sp'
+    end
+
+    img_tag(src, pc_opt) + img_tag(sp_src, sp_opt)
+  end
 
   def nl2br(txt)
     txt.gsub(/(\r\n|\r|\n)/, "<br>")
