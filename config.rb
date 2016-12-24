@@ -60,6 +60,10 @@ end
 
 helpers do
   
+  def current_page?(path)
+    current_page.url == path
+  end
+
   # 高解像度画像の指定
   def img_tag(src, options = {})
     # alt属性などをoptionsで指定できるようにしている
