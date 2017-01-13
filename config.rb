@@ -66,7 +66,7 @@ end
 ###
 
 helpers do
-  
+
   def current_page?(path)
     current_page.url == path
   end
