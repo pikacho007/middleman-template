@@ -24,6 +24,13 @@ activate :external_pipeline,
    source: ".tmp/dist",
    latency: 1
 
+# デプロイ設定
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.build_before = true
+  deploy.branch = 'master'
+end
+
 # Per-page layout changes:
 #
 # With no layout
