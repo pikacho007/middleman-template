@@ -16,6 +16,8 @@ set :haml, { :attr_wrapper => "\"" }
 # URL access xxx.hmtl -> /xxx/
 activate :directory_indexes
 
+activate :automatic_image_sizes
+
 activate :external_pipeline,
    name: :webpack,
    command: build? ?
