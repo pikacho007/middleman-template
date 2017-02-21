@@ -7,8 +7,7 @@ set :js_dir, 'script'
 set :images_dir, 'img'
 # set :build_dir, '../html'
 
-# htmlのattributesの囲みを「"」にする
-set :haml, { :attr_wrapper => "\"" }
+set :slim, { pretty: true, sort_attrs: false, format: :html5 }
 
 # 他言語化
 # activate :i18n
