@@ -1,7 +1,5 @@
 # Middleman Template
 
-____
-
 
 ## Branches
 
