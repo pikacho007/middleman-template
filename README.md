@@ -1,9 +1,9 @@
-#Middleman Template
+# Middleman Template
 
 ____
 
 
-##Branches
+## Branches
 
 
 ***master***
@@ -14,7 +14,7 @@ Static files build from 'source' branch by [middleman](http://middlemanapp.com/j
 
 Source files
 
-##Development
+## Development
 
 ***Install [bundler](http://bundler.io/) gem at first***
 
@@ -22,7 +22,7 @@ Source files
 gem install bundler
 ```
 
-###Get to start
+### Get to start
 
 checkout `source` branch
 
@@ -38,7 +38,7 @@ bundle install --path=vendor/bundle --binstubs=vendor/bin
 yarn install
 ```
 
-###Middleman commands
+### Middleman commands
 
 You can leave out `bundle exec` if you have added `./vendor/bin` to your $PATH in shell.
 
