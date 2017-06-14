@@ -3,14 +3,10 @@
 
 ## Branches
 
-
-***master***
-
-Static files build from 'source' branch by [middleman](http://middlemanapp.com/jp/) gem.
-
-***source***
-
-Source files
+| Branches |          |
+|:---------|:---------|
+| master   | Static files build from 'source' branch by [middleman](http://middlemanapp.com/jp/) gem. |
+| source   | Source files |
 
 ## Development
 
