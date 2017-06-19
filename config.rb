@@ -7,7 +7,7 @@ set :js_dir, 'script'
 set :images_dir, 'img'
 # set :build_dir, '../html'
 
-set :slim, { pretty: true, sort_attrs: false, format: :html5 }
+set :slim, { pretty: true, sort_attrs: false, format: :html }
 
 # 他言語化
 # activate :i18n
