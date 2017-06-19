@@ -88,7 +88,7 @@ helpers do
     sp_opt = options.merge(class: 'sp') { |_key, v0, v1| "#{v0} #{v1}" }
 
     # idキーが付いていた場合は'_sp'を付ける
-    sp_opt[:id] = sp_opt[:id] + '_sp' if(sp_opt[:id])
+    sp_opt[:id] = sp_opt[:id] + '_sp' if sp_opt[:id]
 
     img_tag(src, pc_opt) + img_tag(sp_src, sp_opt)
   end
