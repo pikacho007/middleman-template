@@ -21,9 +21,9 @@ activate :automatic_image_sizes
 activate :external_pipeline,
    name: :webpack,
    command: build? ?
-   "./node_modules/webpack/bin/webpack.js --bail -p" :
-   "./node_modules/webpack/bin/webpack.js --watch -d --progress --color",
-   source: ".tmp/dist",
+   './node_modules/webpack/bin/webpack.js --bail -p' :
+   './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
+   source: '.tmp/dist',
    latency: 1
 
 # デプロイ設定
@@ -68,7 +68,6 @@ end
 ###
 
 helpers do
-
   def current_page?(path)
     current_page.url == path
   end
@@ -76,28 +75,26 @@ helpers do
   # 高解像度画像の指定
   def img_tag(src, options = {})
     # alt属性などをoptionsで指定できるようにしている
-    retina_src = src.gsub(%r{\.\w+$}, '@2x\0')
+    retina_src = src.gsub(/\.\w+$/, '@2x\0')
     image_tag(src, options.merge(srcset: "#{retina_src} 2x"))
   end
 
   # 高解像度画像の指定
   def img_tag_sp(src, options = {})
-    sp_src = src.gsub(%r{\.\w+$}, '-sp\0')
+    sp_src = src.gsub(/\.\w+$/, '-sp\0')
 
     # classキー付与。既存の値がある場合は連結。
-    pc_opt = options.merge(class: 'pc'){ |key, v0, v1| "#{v0} #{v1}" }
-    sp_opt = options.merge(class: 'sp'){ |key, v0, v1| "#{v0} #{v1}" }
+    pc_opt = options.merge(class: 'pc') { |_key, v0, v1| "#{v0} #{v1}" }
+    sp_opt = options.merge(class: 'sp') { |_key, v0, v1| "#{v0} #{v1}" }
 
     # idキーが付いていた場合は'_sp'を付ける
-    if(sp_opt[:id])
-      sp_opt[:id] = sp_opt[:id]+'_sp'
-    end
+    sp_opt[:id] = sp_opt[:id] + '_sp' if(sp_opt[:id])
 
     img_tag(src, pc_opt) + img_tag(sp_src, sp_opt)
   end
 
   def nl2br(txt)
-    txt.gsub(/(\r\n|\r|\n)/, "<br>")
+    txt.gsub(/(\r\n|\r|\n)/, '<br>')
   end
 
   # 現在のページの別言語のページヘのパスを取得する
@@ -105,18 +102,18 @@ helpers do
   def translated_url(locale)
     # Assuming /:locale/page.html
 
-    untranslated_path = @page_id.split("/", 2).last.sub(/\..*$/, '')
+    untranslated_path = @page_id.split('/', 2).last.sub(/\..*$/, '')
 
-    if untranslated_path==="index"
-      untranslated_path = ""
-      path = (locale===:en) ? "/" : "/ja/"
+    if untranslated_path == 'index'
+      untranslated_path = ''
+      path = locale == :en ? '/' : '/ja/'
     else
       begin
         translated = I18n.translate!("paths.#{untranslated_path}", locale: locale)
       rescue I18n::MissingTranslationData
         translated = untranslated_path
       end
-      path = (locale===:en) ? "/#{translated}/" : "/#{locale}/#{translated}/"
+      path = locale == :en ? "/#{translated}/" : "/#{locale}/#{translated}/"
     end
 
     asset_url(path)
@@ -125,7 +122,4 @@ helpers do
   def other_langs
     langs - [I18n.locale]
   end
-
 end
-
-
