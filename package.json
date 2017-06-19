@@ -20,6 +20,5 @@
     "clean-webpack-plugin": "^0.1.13",
     "webpack": "^1.13.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
