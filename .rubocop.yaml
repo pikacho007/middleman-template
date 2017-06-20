@@ -1,0 +1,15 @@
+##################### Style #####################
+
+Style/AsciiComments:
+  Enabled: true
+
+Style/MethodLength:
+  Max: 20
+
+##################### Metrics #####################
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false

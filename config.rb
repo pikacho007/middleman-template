@@ -8,9 +8,9 @@ set :js_dir, 'script'
 set :images_dir, 'img'
 # set :build_dir, '../html'
 
-set :slim, { pretty: true, sort_attrs: false, format: :html }
+set :slim, pretty: true, sort_attrs: false, format: :html
 
-# 他言語化
+# Multiple languages
 # activate :i18n
 
 # URL access xxx.hmtl -> /xxx/
@@ -19,14 +19,15 @@ activate :directory_indexes
 activate :automatic_image_sizes
 
 activate :external_pipeline,
-   name: :webpack,
-   command: build? ?
-   './node_modules/webpack/bin/webpack.js --bail -p' :
-   './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
-   source: '.tmp/dist',
-   latency: 1
+         name: :webpack,
+         command: if build?
+                    './node_modules/webpack/bin/webpack.js --bail -p'
+                  else
+                    './node_modules/webpack/bin/webpack.js --watch -d --progress --color'
+                  end,
+         source: '.tmp/dist',
+         latency: 1
 
-# デプロイ設定
 activate :deploy do |deploy|
   deploy.deploy_method = :git
   deploy.build_before = true
@@ -72,22 +73,21 @@ helpers do
     current_page.url == path
   end
 
-  # 高解像度画像の指定
+  # support high res images
   def img_tag(src, options = {})
-    # alt属性などをoptionsで指定できるようにしている
+    # enable to set attributes in options
     retina_src = src.gsub(/\.\w+$/, '@2x\0')
     image_tag(src, options.merge(srcset: "#{retina_src} 2x"))
   end
 
-  # 高解像度画像の指定
   def img_tag_sp(src, options = {})
     sp_src = src.gsub(/\.\w+$/, '-sp\0')
 
-    # classキー付与。既存の値がある場合は連結。
+    # class treatment
     pc_opt = options.merge(class: 'pc') { |_key, v0, v1| "#{v0} #{v1}" }
     sp_opt = options.merge(class: 'sp') { |_key, v0, v1| "#{v0} #{v1}" }
 
-    # idキーが付いていた場合は'_sp'を付ける
+    # id treatment
     sp_opt[:id] = sp_opt[:id] + '_sp' if sp_opt[:id]
 
     img_tag(src, pc_opt) + img_tag(sp_src, sp_opt)
@@ -97,7 +97,7 @@ helpers do
     txt.gsub(/(\r\n|\r|\n)/, '<br>')
   end
 
-  # 現在のページの別言語のページヘのパスを取得する
+  # Get another language page url
   # http://forum.middlemanapp.com/t/i18n-list-of-language-siblings-and-links-to-them/978/2
   def translated_url(locale)
     # Assuming /:locale/page.html
