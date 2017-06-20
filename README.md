@@ -1,5 +1,6 @@
 # Middleman Template
 
+[![deps][deps]][deps-url]
 
 ## Branches
 
@@ -62,3 +63,6 @@ Build files to `build` dirctory, and auto commit these files to specific branch 
 ```
 bundle exec middleman deploy
 ```
+
+[deps]: https://img.shields.io/david/naokazuterada/middleman-template.svg
+[deps-url]: https://david-dm.org/naokazuterada/middleman-template
