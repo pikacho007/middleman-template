@@ -36,8 +36,8 @@ html lang="ja"
       - data.scripts.each do |file|
         = javascript_include_tag "#{file}"
 
-    = partial 'partials/google_analytics'
+    = partial 'google_analytics'
 
   body class="#{data.classes}"
-    = partial 'partials/facebook_like_button'
+    = partial 'facebook_like_button'
     = yield
