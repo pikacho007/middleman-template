@@ -30,7 +30,7 @@ git submodule update
 
 bundle install --path=vendor/bundle --binstubs=vendor/bin
 
-yarn install
+npm install
 ```
 
 ### Middleman commands
