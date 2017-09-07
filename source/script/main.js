@@ -6,7 +6,6 @@ if( ua.match(/(msie|MSIE)/) || ua.match(/(T|t)rident/) ) {
 else if( ua.match(/Edge/) ) {
   document.body.className += ' edge';
 }
-console.log(ua);
 
 document.isMobile = false;
 document.isTablet = false;
