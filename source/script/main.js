@@ -23,4 +23,6 @@ if(
   (ua.indexOf('Mobile') == 0 && 0 < ua.indexOf('Android'))
 ) {
   document.isTablet = true;
+  var $meta = $('head>meta[name="viewport"]');
+  $meta.attr('content', $meta.attr('content').replace(/width=(\d+|device-width)/g, 'width=1024'));
 }
