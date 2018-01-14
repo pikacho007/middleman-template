@@ -8,9 +8,13 @@ html lang="ja"
     meta name="copyright" content="Copyright (C) [TODO] All rights reserved."
     meta name="viewport" content="width=925"
 
-    link rel="shortcut icon" href="/img/favicon.ico"
-    link rel='apple-touch-icon' type='image/x-icon' href="/img/[TODO].png" size='120x120'
-    link rel='apple-touch-icon' type='image/x-icon' href="/img/[TODO]-big.png" size='152x152'
+    link rel='shortcut icon' href="#{site_url}#{image_path('/img/favicon[TODO].ico')}"
+    link rel="shortcut icon" href="#{site_url}#{image_path('/img/favicon-32x32[TODO].png')}" type="image/png" sizes="32x32"
+    link rel="shortcut icon" href="#{site_url}#{image_path('/img/favicon-16x16[TODO].png')}" type="image/png" sizes="16x16"
+
+    link rel='apple-touch-icon' type='image/x-icon' href="#{site_url}#{image_path('/img/touch-[TODO].png')}" size='120x120'
+    link rel='apple-touch-icon' type='image/x-icon' href="#{site_url}#{image_path('/img/touch-big[TODO].png')}" size='152x152'
+
 
     -# Search Console
     meta name="google-site-verification" content="TODO"
@@ -20,9 +24,9 @@ html lang="ja"
     meta property='og:title' content=data.title
     meta property='og:site_name' content=data.title
     meta property='og:description' content=data.description
-    meta property='og:image' content='[TODO]'
+    meta property='og:image' content="#{site_url}#{image_path('/img/share[TODO].png')}"
     meta property='og:locale' content='ja_JP'
-    meta property='fb:app_id' content="[TODO]"
+    meta property='fb:app_id' content='[TODO]'
 
     - if data.styles
       - data.styles.each do |file|

@@ -13,6 +13,8 @@ set :slim, pretty: true, sort_attrs: false, format: :html
 # Multiple languages
 # activate :i18n
 
+activate :asset_hash
+
 # URL access xxx.hmtl -> /xxx/
 activate :directory_indexes
 
@@ -69,6 +71,10 @@ end
 ###
 
 helpers do
+  def site_url
+    'https://example.com'
+  end
+
   def current_page?(path)
     current_page.url == path
   end
@@ -80,7 +86,7 @@ helpers do
     retina_src = src.gsub(/\.\w+$/, '@2x\0')
     image_tag(src, options.merge(srcset: "#{retina_src} 2x"))
   end
-  
+
   # Usage: =img_tag_sp '/img/example.png', alt: '代替テキスト'
   def img_tag_sp(src, options = {})
     sp_src = src.gsub(/\.\w+$/, '-sp\0')
