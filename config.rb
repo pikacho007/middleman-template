@@ -80,14 +80,14 @@ helpers do
   end
 
   # support high res images
-  # Usage: =img_tag '/img/example.png', alt: '代替テキスト'
+  # Usage: =img_tag '/img/example.png', alt: 'description'
   def img_tag(src, options = {})
     # enable to set attributes in options
     retina_src = src.gsub(/\.\w+$/, '@2x\0')
     image_tag(src, options.merge(srcset: "#{retina_src} 2x"))
   end
 
-  # Usage: =img_tag_sp '/img/example.png', alt: '代替テキスト'
+  # Usage: =img_tag_sp '/img/example.png', alt: 'description'
   def img_tag_sp(src, options = {})
     sp_src = src.gsub(/\.\w+$/, '-sp\0')
 
