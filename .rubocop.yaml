@@ -1,15 +1,13 @@
-##################### Style #####################
-
 Style/AsciiComments:
   Enabled: true
-
 Style/MethodLength:
   Max: 20
-
-##################### Metrics #####################
+  Exclude:
+    - 'config.rb'
 
 Metrics/LineLength:
-  Enabled: false
-
+  Exclude:
+    - 'config.rb'
 Metrics/BlockLength:
-  Enabled: false
+  Exclude:
+    - 'config.rb'
