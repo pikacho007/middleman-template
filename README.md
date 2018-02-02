@@ -19,17 +19,9 @@ gem install bundler
 
 ### Get to start
 
-checkout `source` branch
-
-
-***Install bundles***
-
 ```
-git submodule init
-git submodule update
-
+git clone --recursive -b source https://github.com/naokazuterada/middleman-template.git
 bundle install --path=vendor/bundle --binstubs=vendor/bin
-
 npm install
 ```
 
