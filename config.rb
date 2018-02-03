@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+require 'extensions/pull_before_build'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -29,6 +31,8 @@ activate :external_pipeline,
                   end,
          source: '.tmp/dist',
          latency: 1
+
+activate :pull_before_build
 
 activate :deploy do |deploy|
   deploy.deploy_method = :git
