@@ -1,12 +1,12 @@
 # frozen_string_literal: true
-# To avoid force push build directory and
+# To avoid lost old deploy history by force push
 class PullBeforeBuild < ::Middleman::Extension
   def before_build(_builder)
     p ':::before_build:::'
     if Dir.exist?('build')
       Dir.chdir 'build'
-      p 'Execute "g pull origin"'
-      system 'g pull origin'
+      system 'git branch -u origin/master master'
+      system 'git pull origin'
       Dir.chdir '..'
     else
       p 'There isn\'t build dir yet, so do nothing.'
