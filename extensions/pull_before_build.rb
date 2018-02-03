@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# To avoid lost old deploy history by force push
+# To avoid losting old deploy history by force push
 class PullBeforeBuild < ::Middleman::Extension
   def before_build(_builder)
     p ':::before_build:::'
