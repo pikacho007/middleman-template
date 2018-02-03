@@ -7,6 +7,7 @@ class PullBeforeBuild < ::Middleman::Extension
       Dir.chdir 'build'
       p 'Execute "g pull origin"'
       system 'g pull origin'
+      Dir.chdir '..'
     else
       p 'There isn\'t build dir yet, so do nothing.'
     end
