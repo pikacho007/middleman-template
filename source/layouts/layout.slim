@@ -28,9 +28,8 @@ html lang="ja"
     meta property='og:locale' content='ja_JP'
     meta property='fb:app_id' content='[TODO]'
 
-    - if data.styles
-      - data.styles.each do |file|
-        = stylesheet_link_tag "#{file}"
+    - (data.styles||[]).each do |file|
+      = stylesheet_link_tag "#{file}"
 
     -#= javascript_include_tag "lib/modernizr.custom"
     -#= javascript_include_tag "lib/lodash.min"
@@ -42,6 +41,5 @@ html lang="ja"
   body class="#{data['class']}"
     = partial 'facebook_like_button'
     = yield
-    - if data.scripts
-      - data.scripts.each do |file|
-        = javascript_include_tag "#{file}"
+    - (data.scripts||[]).each do |file|
+      = javascript_include_tag "#{file}"
