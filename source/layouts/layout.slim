@@ -41,5 +41,6 @@ html lang="ja"
   body class="#{data['class']}"
     = partial 'facebook_like_button'
     = yield
-    - (data.scripts||[]).each do |file|
-      = javascript_include_tag "#{file}"
+    - (data.scripts || []).each do |file|
+      - file = file.is_a?(String) ? file : file[config[:environment].to_s]
+      = javascript_include_tag file
