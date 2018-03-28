@@ -29,7 +29,8 @@ html lang="ja"
     meta property='fb:app_id' content='[TODO]'
 
     - (data.styles||[]).each do |file|
-      = stylesheet_link_tag "#{file}"
+      - file = file[config[:environment].to_s] if file.is_a?(Hash)
+      = stylesheet_link_tag file
 
     -#= javascript_include_tag "lib/modernizr.custom"
     -#= javascript_include_tag "lib/lodash.min"
@@ -42,5 +43,5 @@ html lang="ja"
     = partial 'facebook_like_button'
     = yield
     - (data.scripts || []).each do |file|
-      - file = file.is_a?(String) ? file : file[config[:environment].to_s]
+      - file = file[config[:environment].to_s] if file.is_a?(Hash)
       = javascript_include_tag file
