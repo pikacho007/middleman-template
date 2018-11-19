@@ -7,8 +7,8 @@ module.exports = {
   },
 
   resolve: {
-    root: __dirname + '/source/script',
-    // extensions: ['','.js','.jsx']
+    modules: [__dirname + '/source/script'],
+    extensions: ['.js','.jsx']
   },
 
   output: {
@@ -17,7 +17,7 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js[x]?$/,
         exclude: /node_modules|\.tmp|vendor/,
