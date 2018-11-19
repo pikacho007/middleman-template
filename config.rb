@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 require 'extensions/pull_before_build'
 
+PRODUCTION_URL = 'https://example.com'
+STAGING_URL = 'https://stg.example.com'
+
+DeployBranch = 'staging'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -37,7 +42,7 @@ activate :pull_before_build
 activate :deploy do |deploy|
   deploy.deploy_method = :git
   deploy.build_before = true
-  deploy.branch = 'master'
+  deploy.branch = DeployBranch
 end
 
 # Per-page layout changes:
@@ -76,7 +81,13 @@ end
 
 helpers do
   def site_url
-    'https://example.com'
+    if config[:environment] == :development
+      'http://localhost:4567'
+    elsif DeployBranch == 'staging'
+      STAGING_URL
+    else
+      PRODUCTION_URL
+    end
   end
 
   def current_page?(path)
