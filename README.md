@@ -4,10 +4,10 @@
 
 ## Branches
 
-| Branches | Description |
-|:---------|:------------|
-| master   | Static files build from 'source' branch by [middleman](http://middlemanapp.com/jp/) gem. |
-| source   | Source files [default branch] |
+| Branches   | Description |
+|:-----------|:------------|
+| master     | Source files [default branch] |
+| production | Static files build from 'master' branch by [middleman](http://middlemanapp.com/jp/). |
 
 ## Development
 
@@ -20,7 +20,7 @@ gem install bundler
 ### Get to start
 
 ```
-git clone --recursive -b source https://github.com/naokazuterada/middleman-template.git
+git clone --recursive https://github.com/naokazuterada/middleman-template.git
 cd middleman-template
 bundle install --path=vendor/bundle --binstubs=vendor/bin
 npm install
