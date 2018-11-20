@@ -39,7 +39,7 @@ html lang="ja"
 
     = partial 'google_analytics'
 
-  body class="#{data['class']}"
+  body class="#{data['body_class']}"
     = partial 'facebook_like_button'
     = yield
     - (data.scripts || []).each do |file|
