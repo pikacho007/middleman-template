@@ -21,10 +21,7 @@ module.exports = {
       {
         test: /\.js[x]?$/,
         exclude: /node_modules|\.tmp|vendor/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015'],
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.json$/,
