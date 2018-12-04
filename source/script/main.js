@@ -17,12 +17,3 @@ if(
   ) {
   document.isMobile = true;
 }
-// document.isTablet = false;
-// if(
-//   ua.match(/iPad/i) ||
-//   (ua.match(/Mobile/i) && ua.match(/Android/i))
-//   ) {
-//   document.isTablet = true;
-//   var $meta = $('head>meta[name="viewport"]');
-//   $meta.attr('content', $meta.attr('content').replace(/width=(\d+|device-width)/g, 'width=1024'));
-// }
