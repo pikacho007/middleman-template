@@ -27,6 +27,10 @@ activate :directory_indexes
 
 activate :automatic_image_sizes
 
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'Explorer >= 11']
+end
+
 activate :external_pipeline,
          name: :webpack,
          command: if build?

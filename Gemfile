@@ -11,4 +11,5 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '>= 4.0.0'
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
 gem 'middleman-livereload'
+gem 'middleman-autoprefixer'
 gem 'slim', '>= 3.0'
