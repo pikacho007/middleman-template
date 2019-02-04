@@ -149,4 +149,66 @@ helpers do
   def other_langs
     langs - [I18n.locale]
   end
+
+  # Include svg file in line
+  # https://gist.github.com/bitmanic/0047ef8d7eaec0bf31bb
+  def inline_svg(relative_image_path, optional_attributes = {})
+    image_path = File.join(config[:source], config[:images_dir], relative_image_path)
+
+    # If the image was found...
+    if File.exists?(image_path)
+      # Open the image
+      image = File.open(image_path, 'r') { |f| f.read }
+
+      # Return the image if no optional attributes were passed in
+      return image if optional_attributes.empty?
+
+      # Otherwise, parse the image
+      document = Oga.parse_xml(image)
+      svg      = document.css('svg').first
+
+      # Then, add the attributes
+      # NOTE: This allows for hash-based values, but we're only going one level
+      #       deep right now. If you know a great way to dig `N` levels deeper,
+      #       feel free to post about it on the Gist.
+      optional_attributes.each do |attribute, value|
+        case value
+
+        when Hash
+          value.each do |subattribute, subvalue|
+            unless subvalue.class == Hash
+              svg.set(
+                "#{attribute} #{subattribute}".parameterize,
+                subvalue.html_safe
+              )
+            end
+          end
+
+        else
+          svg.set(attribute.to_sym, value.html_safe)
+
+        end
+      end
+
+      # Finally, return the image
+      document.to_xml
+
+    # If the file wasn't found...
+    else
+      # Embed an inline SVG image with an error message
+      %(
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 30"
+          width="400px" height="30px"
+        >
+          <text font-size="16" x="8" y="20" fill="#cc0000">
+            Error: '#{relative_image_path}' could not be found.
+          </text>
+          <rect
+            x="1" y="1" width="398" height="28" fill="none"
+            stroke-width="1" stroke="#cc0000"
+          />
+        </svg>
+      )
+    end
+  end
 end
