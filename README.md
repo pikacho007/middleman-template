@@ -22,8 +22,7 @@ gem install bundler
 ```
 git clone --recursive https://github.com/naokazuterada/middleman-template.git
 cd middleman-template
-bundle install --path=vendor/bundle --binstubs=vendor/bin
-npm install
+npm run setup
 ```
 
 ### Middleman commands

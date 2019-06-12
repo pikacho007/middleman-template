@@ -4,7 +4,7 @@
   "description": "Middleman template files for static web",
   "main": "script/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup": "rbenv exec bundle install --path=vendor/bundle --binstubs=vendor/bin && npm i"
   },
   "repository": {
     "type": "git",
