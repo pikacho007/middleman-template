@@ -9,14 +9,6 @@
 | master     | Source files [default branch] |
 | production | Static files build from 'master' branch by [middleman](http://middlemanapp.com/jp/). |
 
-## Development
-
-***Install [bundler](http://bundler.io/) gem at first***
-
-```
-gem install bundler
-```
-
 ### Get to start
 
 ```
