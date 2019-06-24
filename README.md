@@ -12,10 +12,15 @@
 ### Get to start
 
 ```
-git clone --recursive https://github.com/naokazuterada/middleman-template.git
-cd middleman-template
+git clone --recursive https://github.com/naokazuterada/middleman-template.git <project-name>
+cd <project-name>
 npm run setup
+
+# Change origin
+git remote rm origin
+git remote add origin <prorect repo url>
 ```
+
 
 ### Middleman commands
 
