@@ -9,7 +9,7 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 gem 'oga'
-gem 'middleman', '>= 4.0.0'
+gem 'middleman'
 gem 'middleman-deploy', github: 'middleman-contrib/middleman-deploy', branch: 'master'
 gem 'middleman-livereload'
 gem 'middleman-autoprefixer'
