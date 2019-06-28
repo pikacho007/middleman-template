@@ -27,6 +27,13 @@ html lang="ja"
     meta property='og:image' content="#{site_url}#{image_path('/img/share[TODO].png')}"
     meta property='og:locale' content='ja_JP'
     meta property='fb:app_id' content='[TODO]'
+    
+    meta name="twitter:site" content='@[TODO]'
+    meta name="twitter:title" content=data.title
+    meta name="twitter:url" content="#{site_url}"
+    meta name="twitter:description" content=data.description
+    meta name="twitter:image" content="#{site_url}#{image_path('/img/share.png')}"
+    meta name="twitter:card" content='summary_large_image'
 
     - (data.styles||[]).each do |file|
       - file = file[config[:environment].to_s] if file.is_a?(Hash)
