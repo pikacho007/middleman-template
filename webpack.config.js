@@ -7,7 +7,7 @@ module.exports = {
   },
 
   resolve: {
-    modules: [__dirname + '/source/script'],
+    modules: [__dirname + '/source/script', 'node_modules'],
     extensions: ['.js','.jsx']
   },
 
