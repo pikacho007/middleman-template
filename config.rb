@@ -119,6 +119,20 @@ helpers do
 
     img_tag(src, pc_opt) + img_tag(sp_src, sp_opt)
   end
+  
+  # image_tag with sp image
+  def image_tag_sp(src, options = {})
+    sp_src = src.gsub(/\.\w+$/, '-sp\0')
+
+    # class treatment
+    pc_opt = options.merge(class: 'pc') { |_key, v0, v1| "#{v0} #{v1}" }
+    sp_opt = options.merge(class: 'sp') { |_key, v0, v1| "#{v0} #{v1}" }
+
+    # id treatment
+    sp_opt[:id] = sp_opt[:id] + '_sp' if sp_opt[:id]
+
+    image_tag(src, pc_opt) + image_tag(sp_src, sp_opt)
+  end
 
   def nl2br(txt)
     txt.gsub(/(\r\n|\r|\n)/, '<br>')
