@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var Clean = require('clean-webpack-plugin');
+var { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -36,7 +36,7 @@ module.exports = {
   },
 
   plugins: [
-    new Clean(['.tmp']),
+    new CleanWebpackPlugin({cleanOnceBeforeBuildPatterns: '.tmp/*'}),
     // Declare Global variables
     // new webpack.ProvidePlugin({
     //   $: 'jquery',
