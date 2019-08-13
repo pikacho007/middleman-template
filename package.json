@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:naokazuterada/middleman-template.git"
+    "url": "git@github.com:karappo/middleman-template.git"
   },
   "author": "Naokazu Terada",
   "license": "MIT",
