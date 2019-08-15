@@ -119,7 +119,7 @@ helpers do
 
     img_tag(src, pc_opt) + img_tag(sp_src, sp_opt)
   end
-  
+
   # image_tag with sp image
   def image_tag_sp(src, options = {})
     sp_src = src.gsub(/\.\w+$/, '-sp\0')
@@ -132,6 +132,11 @@ helpers do
     sp_opt[:id] = sp_opt[:id] + '_sp' if sp_opt[:id]
 
     image_tag(src, pc_opt) + image_tag(sp_src, sp_opt)
+  end
+
+  # テンプレート内などrubyからasset_hash付きのURLを取得する
+  def image_url(path)
+    asset_url(path, config[:images_dir])
   end
 
   def nl2br(txt)
