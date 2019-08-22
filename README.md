@@ -11,7 +11,7 @@
 
 ### Get to start
 
-```
+```sh
 git clone --recursive https://github.com/naokazuterada/middleman-template.git <project-name>
 cd <project-name>
 npm run setup
@@ -28,7 +28,7 @@ You can leave out `bundle exec` if you have added `./vendor/bin` to your $PATH i
 
 ***Develop***
 
-```
+```sh
 bundle exec middleman
 ```
 
@@ -41,7 +41,7 @@ Modify files under `source` directory.
 
 Build files in `source` to `build` dirctory
 
-```
+```sh
 bundle exec middleman build
 ```
 
@@ -49,7 +49,7 @@ bundle exec middleman build
 
 Build files to `build` dirctory, and auto commit these files to specific branch (configured in config.rb).
 
-```
+```sh
 bundle exec middleman deploy
 ```
 
