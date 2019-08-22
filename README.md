@@ -14,7 +14,7 @@
 ### Get to start
 
 ```sh
-git clone --recursive https://github.com/naokazuterada/middleman-template.git <project-name>
+git clone --recursive https://github.com/karappo/middleman-template.git <project-name>
 cd <project-name>
 npm run setup
 
