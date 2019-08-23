@@ -11,11 +11,53 @@ scripts:
   #   production: lib/hoge.min
   #   development: lib/hoge
 ---
+-# TODO このスタイルはExamplesを見やすく整えるためだけのものなので、制作時には消すこと
+sass:
+  h1
+    font-size: 20px
+    padding-bottom: 60px
+  header
+    padding: 0 100px
+    background-color: rgba(0,0,0,0.5)
+    position: sticky
+    top: 0
+    height: 60px
+    display: flex
+    align-items: center
+    nav
+      a
+        color: white
+        margin-right: 2em
+        text-decoration: none
+  section
+    padding: 100px 100px
+    height: 100vh
+    &:not(:first-of-type)
+      border-top: 3px dotted #ccc
+    &:nth-of-type(odd)
+      background-color: #fff
+    &:nth-of-type(even)
+      background-color: #eee
+header
+  nav
+    a(href="#pagetop") Top
+    a(href="#scroll-margin-1") data-scroll-margin="0"
+    a(href="#scroll-margin-2") data-scroll-margin="60"
+    a(href="#svg") Inline SVG
 
-h1 ポラーノの広場
+section#firstview
+  h1 First View
+  p Scroll↓
 
-p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎらひかる草の波。
+section#scroll-margin-1(data-scroll-margin="0")
+  h1 Example: Scroll Margin
+  p このセクションは data-scroll-margin="0" を指定しているため、headerを考慮せず offset().top の位置までスクロールする。
+section#scroll-margin-2(data-scroll-margin="60")
+  h1 Example: Scroll Margin
+  p このセクションは data-scroll-margin="60" を指定しているため、headerの高さ（60px）を考慮して、 offset().top + 60px の位置までスクロールする。
 
-=inline_svg 'svg-test.svg', data: {bar: 'baz'}
-br
-=inline_svg 'svg-test.svg', class: 'red'
+section#svg
+  h1 Example: Inline SVG
+  =inline_svg 'svg-test.svg', data: {bar: 'baz'}
+  br
+  =inline_svg 'svg-test.svg', class: 'red'
