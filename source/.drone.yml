@@ -21,11 +21,7 @@ pipeline:
     token: xoxp-249440278914-250327066630-735650098996-2baebc36952f477aee942c98c9f57b63
     channel: builds-karappo
     success_template: |
-      *{{build.status}}*​
-      http://drone.karappo.biz/{{repo.owner}}/{{repo.name}}/{{build.number}}
-      ({{build.branch}}) by {{build.author}}
+      *{{build.status}}*​ http://drone.karappo.biz/{{repo.owner}}/{{repo.name}}/{{build.number}} ({{build.branch}}) by {{build.author}}
     failure_template: |
-      *{{build.status}}*​
-      http://drone.karappo.biz/{{repo.owner}}/{{repo.name}}/{{build.number}}
-      ({{build.branch}}) by {{build.author}}
+      *{{build.status}}*​ http://drone.karappo.biz/{{repo.owner}}/{{repo.name}}/{{build.number}} ({{build.branch}}) by {{build.author}}
 
