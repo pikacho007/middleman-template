@@ -3,7 +3,7 @@ var { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './source/script/main.js'
+    common: './source/script/common.js'
   },
 
   resolve: {
