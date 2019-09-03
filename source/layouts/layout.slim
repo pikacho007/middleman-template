@@ -51,4 +51,8 @@ html lang="ja"
     = yield
     - (data.scripts || []).each do |file|
       - file = file[config[:environment].to_s] if file.is_a?(Hash)
-      = javascript_include_tag file
+      - if file =~ /\/\/maps.googleapis.com/
+        -# IE対策としてgooglemaps にはdeferを付ける（逆にasyncは付けない）
+        = javascript_include_tag file, defer: 'defer'
+      - else
+        = javascript_include_tag file
