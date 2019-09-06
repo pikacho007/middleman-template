@@ -1,5 +1,5 @@
 {
-  "name": "middleman-template",
+  "name": "rinden",
   "version": "1.0.0",
   "description": "Middleman template files for static web",
   "main": "script/main.js",
