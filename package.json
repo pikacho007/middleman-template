@@ -1,7 +1,7 @@
 {
   "name": "rinden",
   "version": "1.0.0",
-  "description": "Middleman template files for static web",
+  "description": "coffee shop",
   "main": "script/main.js",
   "scripts": {
     "setup": "rbenv exec bundle install --path=vendor/bundle --binstubs=vendor/bin && npm i",
@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:karappo/middleman-template.git"
+    "url": "git@github.com/pikacho007/rinden.git"
   },
-  "author": "Naokazu Terada",
+  "author": "Komiya Chizuko",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.5",
