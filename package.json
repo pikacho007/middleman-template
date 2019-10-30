@@ -12,6 +12,7 @@
     "url": "git@github.com:karappo/middleman-template.git"
   },
   "author": "Naokazu Terada",
+  "author": "Komiya Chizuko",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.5",
