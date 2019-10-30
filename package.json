@@ -9,7 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:karappo/middleman-template.git"
+    "url": "git@github.com:karappo/middleman-template.git",
+    "url": "git@github.com/pikacho007/rinden.git",
   },
   "author": "Naokazu Terada",
   "author": "Komiya Chizuko",
