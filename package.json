@@ -1,7 +1,7 @@
 {
-  "name": "middleman-template",
+  "name": "rinden",
   "version": "1.0.0",
-  "description": "Middleman template files for static web",
+  "description": "Coffee Shop",
   "main": "script/main.js",
   "scripts": {
     "setup": "rbenv exec bundle install --path=vendor/bundle --binstubs=vendor/bin && npm i",
