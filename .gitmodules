@@ -1,3 +1,6 @@
 [submodule "source/style/general"]
 	path = source/style/general
 	url = https://github.com/naokazuterada/general.git
+[submodule "bootstrap"]
+	path = bootstrap
+	url = https://github.com/twbs/bootstrap.git
